@@ -1,10 +1,19 @@
 class OutfitsController < ApplicationController
   def index
-    @outfits = Outfit.all
-  end
+		# if session[:current_user_id] != nil
+		if current_user
+			@outfits = current_user.outfits
+		else
+  		@outfits = Outfit.all
+  		render :index
+    end
+	end
 
   def show
     find_outfit
+    @outfit.clothes.each do |c|
+      @user = c.user
+    end
   end
 
   private

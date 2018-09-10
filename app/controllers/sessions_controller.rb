@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   #Logged in
-
+ 
   def new
     render :new
   end
