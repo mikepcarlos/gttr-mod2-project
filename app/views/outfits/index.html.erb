@@ -1,6 +1,7 @@
 <h1>All Outfits!</h1>
-<button><%= link_to "My Account", @user %></button>
-<button><%= link_to "Log Out", logout_path, method: :delete %></button>
+<button><%= link_to "My Account", @user %></button><br>
+<button><%= link_to "Log Out", logout_path, method: :delete %></button><br>
+<button><%= link_to "Create an Outfit!", new_outfit_path %></button><br>
 <% @outfits.each do |outfit| %>
-  <li> <%= link_to outfit.name, outfit%> </li>
+  <li> <%= link_to outfit.name, outfit%> </li><br>
 <% end %>

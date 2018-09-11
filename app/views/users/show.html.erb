@@ -1,7 +1,11 @@
 <h1> <%= @user.display_name %> </h1>
 <p> <%= @user.bio %> </p>
-<% @user.outfits.each do |outfit| %>
-  <li><%= link_to outfit.name, outfit %></li>
-<% end %>
+<h1>My Outfits</h1><br>
+ <!-- <% @user.outfits.each do |outfit| %>
+   <li><%= link_to outfit.name, outfit %></li><br>
+   <button><%= button_to "Delete Outfit", outfit, method: :delete %></button><br>
+ <% end %> -->
 <button><%= link_to "Edit Profile", edit_user_path %></button>
 <button><%= link_to "Delete Account", user_path, method: :delete %></button>
+<button><%= link_to "Create a New Outfit!", new_outfit_path %></button>
+<button><%= link_to "Log Out", logout_path, method: :delete %></button>

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   delete "/gttr", to: "users#destroy"
+  # delete "/outfit/:id", to: "outfit#destroy"
 end

@@ -1,4 +1,4 @@
 class Outfit < ApplicationRecord
-  has_many :clothes
-  has_many :users, through: :clothes
+  has_many :user_clothe_outfits
+  has_many :user_clothes, through: :user_clothe_outfits
 end
