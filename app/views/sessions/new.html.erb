@@ -1,7 +1,43 @@
-<%= form_tag("/sessions") do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <%= label_tag :password %>
-  <%= text_field_tag :password %>
-  <%= submit_tag "Log in!" %>
-<% end %>
+<!-- <div class="login-bg">
+
+</div>
+<%= image_tag "gttr-index-edited3.jpg", id:"index-img" %>
+<h1>gttr</h1>
+<p style="position:absolute">&copy; mi-gyna</p>
+<div class="tint">
+
+</div> -->
+<%= image_tag "gttr-index-edited3.jpg", id:"index-img" %>
+<h1>gttr</h1>
+<button id="login-btn"><%= link_to "Login", login_path, id:"login-btn" %></button>
+<button id="signup-btn"><%= link_to "Sign Up", signup_path %></button>
+<p>&copy; mi-gyna</p>
+
+<!-- <div id="login-modal"> -->
+<div id="login-modal">
+  <div class="modal-content">
+    <div class="form-container">
+      <div class="login-form">
+        <span class="close">&times;</span>
+        <%= form_tag "/sessions" do %>
+        <div class="">
+          <%= label_tag :username %>
+        </div>
+        <div class="input-container">
+          <%= text_field_tag :username %>
+        </div>
+        <br><br>
+        <div class="">
+          <%= label_tag :password %>
+        </div>
+        <div class="input-container">
+          <%= text_field_tag :password %>
+        </div>
+        <br><br>
+        <%= submit_tag "Log in", class:"submit-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
