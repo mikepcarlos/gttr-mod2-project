@@ -1,11 +1,26 @@
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :display_name %>
-  <%= f.text_field :display_name %>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation  %>
-  <%= f.submit %>
-<% end %>
+<%= image_tag "gttr-index-edited3.jpg", id:"index-img" %>
+<h1>gttr</h1>
+<button id="login-btn"><%= link_to "Login", login_path%></button>
+<button id="signup-btn"><%= link_to "Sign Up", signup_path %></button>
+<p>&copy; mi-gyna</p>
+
+<div id="login-modal">
+  <div class="modal-content">
+    <div class="form-container">
+      <div class="login-form" id="signup">
+        <span class="close"><%= link_to "x", '/gttr' %></span>
+          <%= form_for @user do |f| %>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
+            <%= f.label :display_name %>
+            <%= f.text_field :display_name %>
+            <%= f.label :password %>
+            <%= f.text_field :password %>
+            <%= f.label :password_confirmation %>
+            <%= f.text_field :password_confirmation  %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
