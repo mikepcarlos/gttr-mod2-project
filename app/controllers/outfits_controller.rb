@@ -13,9 +13,6 @@ class OutfitsController < ApplicationController
 
   def show
     find_outfit
-    # @outfit.clothes.each do |c|
-    #   @user = c.user
-    # end
   end
 
   def create
