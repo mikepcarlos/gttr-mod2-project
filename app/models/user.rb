@@ -7,7 +7,11 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, presence: true
 
-  def user_clothes
-
+  def outfits_name
+    self.clothes.each do |clothe|
+      clothe.outfits.map do |outfit|
+        return outfit.name
+      end
+    end
   end
 end

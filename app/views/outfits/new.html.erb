@@ -1,7 +1,6 @@
 <%= form_for @outfit do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <%= f.submit %>
+  <%= f.collection_select :clothe_id, Clothe.all, :id, :name %>
+  <%= f.submit "Create" %>
 <% end %>

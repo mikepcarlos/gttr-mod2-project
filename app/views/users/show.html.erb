@@ -1,7 +1,17 @@
 <h1> <%= @user.display_name %> </h1>
 <p> <%= @user.bio %> </p>
-<h1>My Outfits</h1><br>
+<% if @user.outfits_name.empty? %>
+    <h1>No Outfits</h1><br>
+    <button><%= link_to "Create an Outfit!", new_outfit_path %></button><br>
+<% else %>
+    <h1>My Outfits</h1>
+  <h3><%= link_to @user.outfits_name, outfit_path %></h3>
+  <% @user.clothes.each do |clothe| %>
+    <li> <%= clothe.name %> </li>
+  <% end %>
+  <button><%= link_to "Create a New Outfit!", new_outfit_path %></button><br>
+<% end %><br>
 <button><%= link_to "Edit Profile", edit_user_path %></button>
+<button><%= link_to "All Clothes", clothes_path %></button><br>
 <button><%= link_to "Delete Account", user_path, method: :delete %></button>
-<button><%= link_to "Create a New Outfit!", new_outfit_path %></button>
 <button><%= link_to "Log Out", logout_path, method: :delete %></button>
