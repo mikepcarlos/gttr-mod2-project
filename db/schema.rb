@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2018_09_11_194735) do
 
+  create_table "clothe_outfits", force: :cascade do |t|
+    t.integer "clothe_id"
+    t.integer "outfit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "clothes", force: :cascade do |t|
     t.string "name"
     t.string "category"
@@ -23,13 +30,6 @@ ActiveRecord::Schema.define(version: 2018_09_11_194735) do
   create_table "outfits", force: :cascade do |t|
     t.string "name"
     t.datetime "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_clothe_outfits", force: :cascade do |t|
-    t.integer "user_clothe_id"
-    t.integer "outfit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
