@@ -1,5 +1,5 @@
 <h1>All Outfits!</h1>
-<button><%= link_to "My Account", @user %></button><br>
+<button><%= link_to "My Account", user_path(@user) %></button><br>
 <button><%= link_to "Log Out", logout_path, method: :delete %></button><br>
 <button><%= link_to "Create an Outfit!", new_outfit_path %></button><br>
 <button><%= link_to "All Clothes", clothes_path %></button><br>

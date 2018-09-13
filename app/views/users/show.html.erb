@@ -11,7 +11,8 @@
   <% end %>
   <button><%= link_to "Create a New Outfit!", new_outfit_path %></button><br>
 <% end %><br>
-<button><%= link_to "Edit Profile", edit_user_path %></button>
+<button><%= link_to "Explore", outfits_path %></button>
 <button><%= link_to "All Clothes", clothes_path %></button><br>
+<button><%= link_to "Edit Profile", edit_user_path %></button>
 <button><%= link_to "Delete Account", user_path, method: :delete %></button>
 <button><%= link_to "Log Out", logout_path, method: :delete %></button>

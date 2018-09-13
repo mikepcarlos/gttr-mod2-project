@@ -1,10 +1,12 @@
 class ClothesController < ApplicationController
 
   def index
+    @user = current_user
     @clothes = Clothe.all
   end
 
   def show
+    @user = current_user
     find_clothe
   end
 

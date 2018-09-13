@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :username, uniqueness: true
   validates :password, presence: true
+  # validates_presence_of :password, :if => :special?
 
   def outfits_name
     self.clothes.each do |clothe|
@@ -13,5 +14,15 @@ class User < ApplicationRecord
         return outfit.name
       end
     end
+  end
+
+  private
+
+  def make_sepcial
+    @special = true
+  end
+
+  def special?
+    @special
   end
 end
