@@ -1,8 +1,8 @@
 <%= @outfit.name %>
 <% @outfit.clothes.each do |clothe| %>
-  <%= clothe.category %>
+  <%= clothe.name %>
 <% end %>
-<button><%= link_to "Delete Outfit", @outfit, method: :delete %></button>
+<button><%= link_to "Delete Outfit", @outfit, method: :delete %></button><br>
 <button><%= link_to "Edit Outfit", edit_outfit_path %></button>
 <button><%= link_to "My Account", user_path(@user) %></button>
 <button><%= link_to "Explore", outfits_path %></button>
