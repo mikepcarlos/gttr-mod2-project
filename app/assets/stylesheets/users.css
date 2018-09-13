@@ -1,3 +1,22 @@
+/* .error-modal {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  color: red;
+} */
+
+.error-message {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  color: red;
+  margin-right: 38px;
+}
+
 #signup {
   height: 415px;
 }

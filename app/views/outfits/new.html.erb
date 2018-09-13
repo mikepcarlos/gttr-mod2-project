@@ -13,23 +13,42 @@
   </div>
 </div>
 
-<div class="new-outfit-form">
-  <%= form_for @outfit do |f| %>
-    <%= f.label 'Name Your Outfit:' %>
-    <%= f.text_field :name %>
-
-    <%= f.submit "Create" %>
-  <% end %>
-</div>
-
 <div class="main">
   <div class="main-nav">
     <button><%= link_to "Log Out", logout_path, method: :delete %></button>
     <button><%= link_to "My Account", @user %></button>
     <button><%= link_to "Explore", outfits_path %></button>
   </div>
-  <div id="shirts">
-    <!-- <%= image_tag Clothe.all.first.url %> -->
+  <div class="new-outfit-form">
+    <%= form_for @outfit do |f| %>
+      <div class="create-outfit-form">
+        <%= f.label 'Name Your Outfit:' %>
+        <%= f.text_field :name %>
+        <%= f.submit "Create" %>
+      </div>
+      <div id="shirts" class="select-clothes">
+        <% @shirts.each do |shirt| %>
+          <%= image_tag shirt.url %>
+          <%= f.radio_button :clothe_ids, shirt.id %>
+        <% end %>
+      </div>
+      <div id="pants" class="select-clothes">
+        <% @pants.each do |pant| %>
+          <%= image_tag pant.url %>
+          <%= f.radio_button :clothe_ids, pant.id %>
+        <% end %>
+      </div>
+      <div id="footwear" class="select-clothes">
+        <% @footwears.each do |footwear| %>
+          <%= image_tag footwear.url %>
+          <%= f.radio_button :clothe_ids, footwear.id %>
+        <% end %>
+      </div>
+      <!-- <%= f.collection_check_boxes :clothe_ids, Clothe.all, :id, :url %> -->
+
+    <% end %>
+  </div>
+  <!-- <div id="shirts">
     <%= image_tag "shirts/army-green-shirt.jpg" %>
     <%= image_tag "shirts/blue-plaid.jpg" %>
     <%= image_tag "shirts/checkered-shirt.jpeg" %>
@@ -98,5 +117,5 @@
     <%= image_tag "footwear/adidas-black-stripe.jpg" %>
     <%= image_tag "footwear/teal-sneakers.jpg" %>
     <%= image_tag "footwear/sandals.png" %>
-  </div>
+  </div> -->
 </div>

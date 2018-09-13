@@ -4,9 +4,16 @@
 <button id="signup-btn"><%= link_to "Sign Up", signup_path %></button>
 <p>&copy; mi-gyna</p>
 
-<div id="login-modal">
+<div class="modal">
   <div class="modal-content">
     <div class="form-container">
+        <ul class="modal-content">
+          <% if @user.errors.any? %>
+            <% @user.errors.full_messages.each do |error| %>
+              <li class="error-message">*<%= error %></li>
+            <% end %>
+          <% end %>
+        </ul>
       <div class="login-form" id="signup">
         <span class="close"><%= link_to "x", '/gttr' %></span>
           <%= form_for @user do |f| %>
@@ -15,9 +22,9 @@
             <%= f.label :display_name %>
             <%= f.text_field :display_name %>
             <%= f.label :password %>
-            <%= f.text_field :password %>
+            <%= f.password_field :password %>
             <%= f.label :password_confirmation %>
-            <%= f.text_field :password_confirmation  %>
+            <%= f.password_field :password_confirmation  %>
             <%= f.submit %>
           <% end %>
         </div>

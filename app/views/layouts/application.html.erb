@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <% unless controller_name == "application" || controller_name == "sessions" || current_page?(signup_path) %>
+      <nav>
+        <h1>gttr</h1>
+        <ul>
+          <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+          <li><%= link_to "My Account", @user %></li>
+          <li><%= link_to "Create", new_outfit_path %></li>
+          <li><%= link_to "Explore", outfits_path %></li>
+        </ul>
+      </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>

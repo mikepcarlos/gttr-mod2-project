@@ -8,6 +8,9 @@ class OutfitsController < ApplicationController
 	end
 
   def new
+    @shirts = Clothe.find_category("Shirt")
+    @pants = Clothe.find_category("Pants")
+    @footwears = Clothe.find_category("Footwear")
     if current_user
       @outfit = Outfit.new
     else
@@ -23,11 +26,13 @@ class OutfitsController < ApplicationController
   def create
     if current_user
       @outfit = Outfit.new(name: params[:outfit][:name])
+      byebug
       @outfit.save
       ids_arr = params[:outfit][:clothe_ids]#.map {|id| @outfit.clothe_ids}
       clothe_arr = ids_arr.select{|id| !id.empty?}
       stuff = clothe_arr.each {|id| @outfit.clothes << Clothe.find(id.to_i)}
-      # byebug
+
+
       redirect_to current_user
     else
       redirect_to login_path

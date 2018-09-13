@@ -14,3 +14,11 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+ // $(function() {
+ //    $('#nav li a').click(function() {
+ //       $('#nav li').removeClass();
+ //       $($(this).attr('href')).addClass('active');
+ //    });
+ // });

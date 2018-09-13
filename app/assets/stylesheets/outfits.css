@@ -20,30 +20,25 @@
   outline: 1px solid red;
 }
 
-.all-outfit-margin h4 {
-
+.select-clothes {
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 50px;
 }
 
-.new-outfit-form {
-  height: 50px;
-  width: 400px;
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-  right: 0;
-  background-color: #2f2f2f;
-  overflow-x: hidden;
-  padding-top: 12px;
-  border: 1px solid #000;
+.create-outfit-form {
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 20px;
+  padding-top: 25px;
 }
 
 .new-outfit-form label {
-  color: white;
+  color: #525252;
+  font-size: 25px;
   margin-left: 20px;
 }
 
 .new-outfit-form input {
-  padding: 2px;
+  padding: 3px;
   margin: 2px;
 }
 
