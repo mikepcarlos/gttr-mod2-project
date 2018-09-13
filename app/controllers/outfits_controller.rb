@@ -16,19 +16,32 @@ class OutfitsController < ApplicationController
   end
 
   def show
+    @user = current_user
     find_outfit
   end
 
   def create
-    @outfit = Outfit.new(outfit_params)
-    @outfit.save
-    redirect_to outfits_path
+    if current_user
+      @outfit = Outfit.new(name: params[:outfit][:name])
+      @outfit.save
+      ids_arr = params[:outfit][:clothe_ids]#.map {|id| @outfit.clothe_ids}
+      clothe_arr = ids_arr.select{|id| !id.empty?}
+      stuff = clothe_arr.each {|id| @outfit.clothes << Clothe.find(id.to_i)}
+      # byebug
+      redirect_to current_user
+    else
+      redirect_to login_path
+    end
   end
 
   def update
     find_outfit
-    @outfit.update(outfit_params)
-    redirect_to outfit_path
+    @outfit.update(name: params[:outfit][:name])
+    ids_arr = params[:outfit][:clothe_ids].each {|id| @outfit.clothes}
+    while ids_arr.map{|id| !id.empty?} == true
+      @outfit.clothes << Clothe.find(id)
+    end
+    redirect_to outfits_path
   end
 
   def edit

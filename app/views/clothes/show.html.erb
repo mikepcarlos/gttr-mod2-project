@@ -1,6 +1,6 @@
 <h2>Name: <%= @clothe.name %></h2>
 <h5>Color: <%= @clothe.color %></h5>
 <li>Category: <%= @clothe.category %></li>
-<button><%= link_to "My Account", @user %></button>
+<button><%= link_to "My Account", user_path(@user) %></button>
 <button><%= link_to "Explore", outfits_path %></button>
 <button><%= link_to "Log Out", logout_path, method: :delete %></button>

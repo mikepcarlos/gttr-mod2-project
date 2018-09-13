@@ -1,0 +1,9 @@
+<h1>Edit an Outfit</h1>
+<%= form_for @outfit do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.collection_check_boxes :clothe_ids, Clothe.all, :id, :name %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<%= params.inspect %>
