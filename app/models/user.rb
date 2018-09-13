@@ -8,11 +8,9 @@ class User < ApplicationRecord
   # validates :password, presence: true
   validates_presence_of :password, :if => :special?
 
-  def outfits_name
-    self.clothes.each do |clothe|
-      clothe.outfits.map do |outfit|
-        return outfit.name
-      end
+  def my_outfits
+    Outfit.all.select do |outfit|
+      outfit.clothes.reduce(true) {|curr, clothe| curr && self.clothes.include?(clothe)}
     end
   end
 

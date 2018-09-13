@@ -23,12 +23,19 @@ class OutfitsController < ApplicationController
   def create
     if current_user
       @outfit = Outfit.new(name: params[:outfit][:name])
-      @outfit.save
-      ids_arr = params[:outfit][:clothe_ids]#.map {|id| @outfit.clothe_ids}
+      # @outfit.save
+      ids_arr = params[:outfit][:clothe_ids]
       clothe_arr = ids_arr.select{|id| !id.empty?}
-      stuff = clothe_arr.each {|id| @outfit.clothes << Clothe.find(id.to_i)}
-      # byebug
-      redirect_to current_user
+      clothe_arr.each {|id| @outfit.clothes << Clothe.find(id.to_i)}
+      @outfit.save
+      @outfit.clothes.each do |clothe|
+        UserClothe.find_or_create_by(clothe_id: clothe.id, user_id: current_user.id)
+      end
+      if @outfit.valid?
+        redirect_to current_user
+      else
+        render :new
+      end
     else
       redirect_to login_path
     end
