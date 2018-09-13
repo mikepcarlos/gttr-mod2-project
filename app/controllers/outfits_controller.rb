@@ -8,7 +8,11 @@ class OutfitsController < ApplicationController
 	end
 
   def new
-    @outfit = Outfit.new
+    if current_user
+      @outfit = Outfit.new
+    else
+      redirect_to login_path
+    end
   end
 
   def show
