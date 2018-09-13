@@ -1,0 +1,53 @@
+.outfits-nav {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.all-outfits {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.all-outfit-margin {
+  position: relative;
+  display: inline-block;
+  width: 260px;
+  height: 300px;
+  margin-left: 28px;
+  margin-top: 50px;
+  outline: 1px solid red;
+}
+
+.all-outfit-margin h4 {
+
+}
+
+.new-outfit-form {
+  height: 50px;
+  width: 400px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  background-color: #2f2f2f;
+  overflow-x: hidden;
+  padding-top: 12px;
+  border: 1px solid #000;
+}
+
+.new-outfit-form label {
+  color: white;
+  margin-left: 20px;
+}
+
+.new-outfit-form input {
+  padding: 2px;
+  margin: 2px;
+}
+
+.new-outfit-form input[type=submit] {
+  width: auto;
+  margin-left: 8px;
+}

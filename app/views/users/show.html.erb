@@ -1,4 +1,4 @@
-<h1> <%= @user.display_name %> </h1>
+<!-- <h1> <%= @user.display_name %> </h1>
 <p> <%= @user.bio %> </p>
 <% if @user.outfits_name.empty? %>
     <h1>No Outfits</h1><br>
@@ -14,4 +14,45 @@
 <button><%= link_to "Edit Profile", edit_user_path %></button>
 <button><%= link_to "All Clothes", clothes_path %></button><br>
 <button><%= link_to "Delete Account", user_path, method: :delete %></button>
-<button><%= link_to "Log Out", logout_path, method: :delete %></button>
+<button><%= link_to "Log Out", logout_path, method: :delete %></button> -->
+
+<!-- css -->
+
+<div class="sidenav profile">
+  <h1 class="profile-gttr">gttr</h1>
+  <%= image_tag "models/willowsmith.jpg", class:"profile-img" %>
+  <div class="user-info">
+    <h3><%= @user.display_name %></h3>
+    <p>(@<%= @user.username %>)</p><br>
+    <p>____________________________________</p>
+    <p><%= @user.bio %></p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="main-nav">
+    <button><%= link_to "Log Out", logout_path, method: :delete %></button>
+    <button><%= link_to "Create", new_outfit_path %></button>
+    <button><%= link_to "Explore", outfits_path %></button>
+  </div>
+  <div class="user-outfits">
+    <div class="outfit">
+
+    </div>
+    <div class="outfit">
+
+    </div>
+    <div class="outfit">
+
+    </div>
+    <div class="outfit">
+
+    </div>
+    <div class="outfit">
+
+    </div>
+    <div class="outfit">
+
+    </div>
+  </div>
+</div>

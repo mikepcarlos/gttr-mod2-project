@@ -1,8 +1,24 @@
-<h1>All Outfits!</h1>
+<!-- <h1>All Outfits!</h1>
 <button><%= link_to "My Account", @user %></button><br>
 <button><%= link_to "Log Out", logout_path, method: :delete %></button><br>
 <button><%= link_to "Create an Outfit!", new_outfit_path %></button><br>
 <button><%= link_to "All Clothes", clothes_path %></button><br>
 <% @outfits.each do |outfit| %>
   <li> <%= link_to outfit.name, outfit%> </li><br>
-<% end %>
+<% end %> -->
+
+
+<!-- css -->
+  <div class="main-nav">
+    <h1>gttr</h1>
+    <button><%= link_to "Log Out", logout_path, method: :delete %></button>
+    <button><%= link_to "My Account", @user %></button>
+    <button><%= link_to "Create", new_outfit_path %></button>
+  </div>
+  <div class="all-outfits">
+    <% @outfits.each do |outfit| %>
+      <div class="all-outfit-margin">
+        <h4><%= outfit.name %></h4>
+      </div>
+    <% end %>
+  </div>

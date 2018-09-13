@@ -1,3 +1,48 @@
 #signup {
   height: 415px;
 }
+
+.profile {
+  width: 230px;
+  text-align: center;
+  color: #f2f2f2;
+}
+
+.profile-gttr {
+  left: 54px;
+}
+
+.profile-img {
+  width: 200px;
+  margin-top: 100px;
+}
+
+.user-info {
+  text-align: left;
+}
+
+.user-info h3 {
+  margin-top: 23px;
+  margin-bottom: 0;
+  margin-left: 16px;
+}
+
+.user-info p {
+  margin: 5px 16px;
+  font-size: 12px;
+}
+
+.user-outfits {
+  width: 92%;
+  float: right;
+}
+
+.outfit {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 300px;
+  margin-left: 37px;
+  margin-top: 50px;
+  outline: 1px solid red;
+}
