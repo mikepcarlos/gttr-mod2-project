@@ -23,7 +23,7 @@ class OutfitsController < ApplicationController
   def create
     if current_user
       @outfit = Outfit.new(name: params[:outfit][:name])
-      # @outfit.save
+      @outfit.user = current_user
       ids_arr = params[:outfit][:clothe_ids]
       clothe_arr = ids_arr.select{|id| !id.empty?}
       clothe_arr.each {|id| @outfit.clothes << Clothe.find(id.to_i)}

@@ -1,12 +1,12 @@
 <h1> <%= @user.display_name %> </h1>
 <p> <%= @user.bio %> </p>
-<% if @user.my_outfits.empty? %>
+<% if @user.outfits.empty? %>
     <h1>No Outfits</h1><br>
     <button><%= link_to "Create an Outfit!", new_outfit_path %></button><br>
 <% else %>
     <h1>My Outfits</h1>
-    <% @user.my_outfits.each do |outfit| %>
-    <h3><%= outfit.name %></h3>
+    <% @user.outfits.each do |outfit| %>
+    <h3><%= link_to outfit.name, outfit %></h3>
 <% end %>
   <button><%= link_to "Create a New Outfit!", new_outfit_path %></button><br>
 <% end %><br>

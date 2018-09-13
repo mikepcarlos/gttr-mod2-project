@@ -3,6 +3,7 @@ class CreateOutfits < ActiveRecord::Migration[5.2]
     create_table :outfits do |t|
       t.string :name
       t.datetime :date
+      t.integer :user_id
 
       t.timestamps
     end
