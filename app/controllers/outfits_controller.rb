@@ -12,6 +12,7 @@ class OutfitsController < ApplicationController
     @pants = Clothe.find_category("Pants")
     @footwears = Clothe.find_category("Footwear")
     if current_user
+      @user = current_user
       @outfit = Outfit.new
     else
       redirect_to login_path
@@ -27,10 +28,9 @@ class OutfitsController < ApplicationController
     if current_user
       @outfit = Outfit.new(name: params[:outfit][:name])
       @outfit.user = current_user
-      # byebug
-      ids_arr = params[:outfit][:clothe_ids]
-      clothe_arr = ids_arr.select{|id| !id.empty?}
-      clothe_arr.each {|id| @outfit.clothes << Clothe.find(id.to_i)}
+      ids_arr = []
+      ids_arr = params[:clothe_ids].values
+      ids_arr.each {|id| @outfit.clothes << Clothe.find(id.to_i)}
       @outfit.save
       @outfit.clothes.each do |clothe|
         UserClothe.find_or_create_by(clothe_id: clothe.id, user_id: current_user.id)

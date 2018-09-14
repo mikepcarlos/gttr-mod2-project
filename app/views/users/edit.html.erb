@@ -1,7 +1,46 @@
-<%= form_for @user do |f| %>
-  <%= f.label :display_name %>
-  <%= f.text_field :display_name %>
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
-  <%= f.submit %>
-<% end %>
+<!-- # <%= form_for @user do |f| %>
+#   <%= f.label :display_name %>
+#   <%= f.text_field :display_name %>
+#   <%= f.label :bio %>
+#   <%= f.text_area :bio %>
+#   <%= f.submit %>
+# <% end %> -->
+
+<div class="sidenav profile">
+  <h1>gttr</h1>
+  <%= image_tag "models/willowsmith.jpg", class:"profile-img" %>
+  <div class="user-edit">
+    <%= form_for @user do |f| %>
+      <%= f.label :display_name %>
+      <%= f.text_field :display_name %>
+      <%= f.label :bio %>
+      <%= f.text_area :bio %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+
+<div class="main">
+  <div class="main-nav">
+    <button><%= link_to "Log Out", logout_path, method: :delete %></button>
+    <button><%= link_to "Create", new_outfit_path %></button>
+    <button><%= link_to "Explore", outfits_path %></button>
+  </div>
+  <div class="user-outfits">
+    <% if @user.outfits.empty? %>
+        <p style="margin:50px;">No outfits to show</p>
+    <% else %>
+        <% @user.outfits.each do |outfit| %>
+        <div class="outfit">
+          <h3><%= outfit.name %></h3>
+          <span><%= link_to "x", outfit, method: :delete %></span>
+          <% outfit.clothes.each do |clothe| %>
+            <div class="outfit-clothe">
+              <%= image_tag clothe.url %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

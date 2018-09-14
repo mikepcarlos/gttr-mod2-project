@@ -14,10 +14,24 @@
   position: relative;
   display: inline-block;
   width: 260px;
-  height: 300px;
+  height: 325px;
   margin-left: 28px;
   margin-top: 50px;
-  outline: 1px solid red;
+  border: 1px solid #e2e2e2;
+  border-radius: 68px;
+}
+
+.index-all-outfits {
+  height: 350px;
+}
+
+.index-all-outfits a:hover {
+  color: #696969;
+}
+
+.all-outfit-margin h4 {
+  font-size: 20px;
+  margin: 15px 0;
 }
 
 .select-clothes {
@@ -26,23 +40,43 @@
 }
 
 .create-outfit-form {
-  border-bottom: 1px solid #d2d2d2;
-  padding-bottom: 20px;
-  padding-top: 25px;
+  border: 1px solid #000000;
+  background-color: #c1c1c1bf;
+  position: fixed;
+  width: 367px;
+  height: 46px;
+  text-align: center;
+  bottom: 5px;
+  right: 12px;
 }
 
 .new-outfit-form label {
-  color: #525252;
-  font-size: 25px;
-  margin-left: 20px;
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .new-outfit-form input {
   padding: 3px;
   margin: 2px;
+  border: 1px solid #0000008c;
 }
 
 .new-outfit-form input[type=submit] {
-  width: auto;
-  margin-left: 8px;
+  margin-left: 6px;
+  font-weight: bold;
+}
+
+.top {
+  position: fixed;
+  z-index: 1;
+  height: 15px;
+  top: 665px;
+  right: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.top a:hover {
+  color: inherit;
 }

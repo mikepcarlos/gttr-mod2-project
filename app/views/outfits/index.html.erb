@@ -6,8 +6,14 @@
   </div>
   <div class="all-outfits">
     <% @outfits.each do |outfit| %>
-      <div class="all-outfit-margin">
-        <h4><%= outfit.name %></h4>
+      <% user_id = outfit.user_id %>
+      <div class="all-outfit-margin index-all-outfits">
+        <h4><%= link_to outfit.name, User.find(user_id) %></h4>
+        <% outfit.clothes.each do |clothe| %>
+          <div class="outfit-clothe">
+            <%= image_tag clothe.url %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>

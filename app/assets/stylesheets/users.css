@@ -1,12 +1,3 @@
-/* .error-modal {
-  position: relative;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  color: red;
-} */
-
 .error-message {
   position: relative;
   z-index: 1;
@@ -44,11 +35,26 @@
   margin-top: 23px;
   margin-bottom: 0;
   margin-left: 16px;
+  display: inline-block;
 }
 
 .user-info p {
   margin: 5px 16px;
   font-size: 12px;
+  display: block;
+}
+
+.user-info button {
+  position: relative;
+  top: 0;
+  right: 22px;
+  padding: 0;
+}
+
+.user-info a {
+  font-size: 10px;
+  padding: 6px;
+  color: #484848;
 }
 
 .user-outfits {
@@ -60,8 +66,62 @@
   position: relative;
   display: inline-block;
   width: 250px;
-  height: 300px;
+  height: 360px;
   margin-left: 37px;
   margin-top: 50px;
-  outline: 1px solid red;
+  border: 1px solid #e2e2e2;
+  border-radius: 50px;
+}
+
+.outfit h3 {
+  height: 10%;
+  width: 210px;
+  margin: 4px auto;
+  margin-top: 11px;
+  font-size: 24px;
+  text-align: center;
+  color: #4c4c4c;
+}
+
+.outfit span {
+  position: absolute;
+  top: 9px;
+  right: 25px;
+  font-size: 25px;
+}
+
+.outfit a:hover {
+  color: #909090;
+}
+
+.outfit-clothe {
+  height: 25%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.outfit-clothe img {
+  height: 100%;
+  width: auto;
+  margin: 3px 0;
+}
+
+/* edit user  */
+.user-edit label {
+  display: block;
+  margin: 12px 0;
+}
+
+.user-edit input,
+.user-edit textarea {
+  border: 2px solid #0400ff4a;
+}
+
+input#user_display_name {
+  width: 135px;
+}
+
+.user-edit input[type=submit] {
+  color: #484848;
+  margin-left: 3px;
 }

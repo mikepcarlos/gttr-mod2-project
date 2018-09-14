@@ -2,7 +2,7 @@
 <!-- css -->
 
 <div class="sidenav">
-  <h1>gttr</h1>
+  <h1 id="top">gttr</h1>
   <div id="nav-container">
     <a href="#shirts">Shirt</a>
     <a href="#pants">Pant</a>
@@ -15,10 +15,14 @@
 
 <div class="main">
   <div class="main-nav">
-    <button><%= link_to "Log Out", logout_path, method: :delete %></button>
-    <button><%= link_to "My Account", @user %></button>
-    <button><%= link_to "Explore", outfits_path %></button>
   </div>
+  <ul class="modal-content">
+    <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |error| %>
+    <li class="error-message">*<%= error %></li>
+    <% end %>
+    <% end %>
+  </ul>
   <div class="new-outfit-form">
     <%= form_for @outfit do |f| %>
       <div class="create-outfit-form">
@@ -29,21 +33,29 @@
       <div id="shirts" class="select-clothes">
         <% @shirts.each do |shirt| %>
           <%= image_tag shirt.url %>
-          <%= f.radio_button :clothe_ids, shirt.id %>
+          <%= radio_button_tag 'clothe_ids[shirt]', shirt.id %>
         <% end %>
       </div>
       <div id="pants" class="select-clothes">
         <% @pants.each do |pant| %>
           <%= image_tag pant.url %>
-          <%= f.radio_button :clothe_ids, pant.id %>
+          <%= radio_button_tag 'clothe_ids[pant]', pant.id %>
         <% end %>
       </div>
       <div id="footwear" class="select-clothes">
         <% @footwears.each do |footwear| %>
           <%= image_tag footwear.url %>
-          <%= f.radio_button :clothe_ids, footwear.id %>
+          <%= radio_button_tag 'clothe_ids[footwear]', footwear.id %>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+<button onclick="topFunction()" class="top"><a href="#top">^</a></button>
+
+<script type="text/javascript">
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>

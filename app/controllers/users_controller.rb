@@ -36,6 +36,9 @@ class UsersController < ApplicationController
   def destroy
     find_user
     @user.destroy
+    @user.outfits.each do |outfit|
+      outfit.destroy
+    end 
     redirect_to gttr_path
   end
 
