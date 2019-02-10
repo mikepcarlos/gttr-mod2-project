@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
     @users = User.all
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
     @user.destroy
     @user.outfits.each do |outfit|
       outfit.destroy
-    end 
+    end
     redirect_to gttr_path
   end
 

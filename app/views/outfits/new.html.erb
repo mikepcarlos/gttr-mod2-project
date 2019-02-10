@@ -24,7 +24,7 @@
     <% end %>
   </ul>
   <div class="new-outfit-form">
-    <%= form_for @outfit do |f| %>
+    <%= form_for @outfit, html: { autocomplete: "off" } do |f| %>
       <div class="create-outfit-form">
         <%= f.label 'Name Your Outfit:' %>
         <%= f.text_field :name %>

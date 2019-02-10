@@ -1,4 +1,7 @@
 class OutfitsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
+
   def index
 		if current_user
 			@outfits = Outfit.all

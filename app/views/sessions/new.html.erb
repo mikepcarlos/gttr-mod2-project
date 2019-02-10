@@ -9,7 +9,7 @@
     <div class="form-container">
       <div class="login-form">
         <span class="close"><%= link_to "x", '/gttr' %></span>
-        <%= form_tag "/sessions" do %>
+        <%= form_tag "/sessions", html: { autocomplete: "off" } do %>
         <div class="">
           <%= label_tag :username %>
         </div>
